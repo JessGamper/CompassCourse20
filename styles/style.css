@@ -1,0 +1,84 @@
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --bg: #E3FDFD;
+    --fg: #CBF1F5;
+    --pC: #A6E3E9;
+    --sC: #71C9CE;
+    --c1: #F38181;
+    --c2: #FCE38A;
+    --c3: #EAFFD0;
+}
+
+.body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: aqua;
+    height: 100vh;
+}
+
+/*Drawing the space for the NavBar with telling the element from which column to which column does it need to exist*/
+.NavBar {
+    grid-column: 1 /  span 12;
+    grid-row: 1 / span 1;
+    background-color: var(--bg);
+}
+
+.Footer {
+    grid-column: 1 / span 12;
+    grid-row: 12 / span 1;
+    background-color: var(--bg);
+}
+
+.LeftSideBar {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 10;
+    background-color: var(--bg);
+}
+
+.RightSideBar {
+    grid-column: 12 / span 1;
+    grid-row: 2 / span 10;
+    background-color: var(--bg);
+}
+
+.PageBody {
+    grid-column: 2 / span 10;
+    grid-row: 2 / span 10;
+    background-color: var(--pC);
+}
+
+/*style for page body*/
+.PageBody {
+    background: radial-gradient(circle at top, var(--sC), var(--pC), var(--bg), transparent), radial-gradient(circle at bottom, var(--c1), var(--c2), var(--c3));
+    -webkit-animation: AnimatedBG 12s ease-in-out infinite;
+    background-size: 400% 400%;
+
+
+}
+
+.Banner {
+    text-align: center;
+    font-size: 15pt;
+    font-family: 'Roboto Slab', serif;
+}
+
+@-webkit-keyframes AnimatedBG {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position:120% 100%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
